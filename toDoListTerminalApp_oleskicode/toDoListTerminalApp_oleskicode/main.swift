@@ -57,7 +57,7 @@ func completeTask() {
     }
     //mark task as complete
     print("Task to complete: \(input)")
-    toDoList[input-1].isComplete
+    toDoList[input-1].isComplete = true
 }
 
 func showMenu() {
