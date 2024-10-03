@@ -1,0 +1,40 @@
+Exercise: Create a Simple To-Do List App
+Write a Swift command-line program that allows a user to create, view, and manage a simple to-do list. The user should be able to perform the following actions:
+
+Add a task – The user can add a task to the list.
+View tasks – Display all tasks on the list with their statuses (whether completed or not).
+Mark a task as completed – The user can mark any task as completed.
+Remove a task – The user can remove a task from the list.
+Quit – The user can exit the application.
+
+Requirements:
+Use a Task struct to represent a task with properties for the task's name and completion status.
+Use an array to store tasks.
+Implement input handling so the user can interact with the program through a text-based menu.
+
+Sample Menu:
+Simple To-Do List
+1. Add a new task
+2. View all tasks
+3. Mark a task as completed
+4. Remove a task
+5. Quit
+
+Sample Output:
+Simple To-Do List
+1. Add a new task
+2. View all tasks
+3. Mark a task as completed
+4. Remove a task
+5. Quit
+Enter your choice: 2
+
+Tasks:
+1. [ ] Buy groceries
+2. [ ] Finish homework
+3. [X] Call mom
+
+Tips:
+Use a loop to continually show the menu until the user chooses to quit.
+Use readLine() to handle user input.
+Make sure the tasks are numbered, and provide clear instructions for each action.
