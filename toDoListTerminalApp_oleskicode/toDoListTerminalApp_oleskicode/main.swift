@@ -18,6 +18,19 @@ struct toDoTask {
 
 var toDoList: [toDoTask] = []
 
+func printMenu() {
+    printTaskList()
+    print("Enter value:")
+    print("1. Add New Task")
+    if toDoList.isEmpty == false {
+        print("2. View all tasks")
+        print("3. Mark a task as completed")
+        print("4. Remove a task")
+        print("5. Remove all completed tasks")
+    }
+    print("6. Quit/Exit")
+}
+
 func addNewTask() {
     print("Enter task description:")
     let inputString = readLine()!
@@ -41,7 +54,6 @@ func printTaskList() {
     print("----------------------------")
 }
 
-//TODO
 func completeTask() {
     printTaskList()
     print("Enter task number to mark as complete:")
@@ -55,7 +67,6 @@ func completeTask() {
         print("Invalid input. Please enter a valid number.")
         return
     }
-    //mark task as complete
     print("Task to complete: \(input)")
     toDoList[input-1].isComplete = true
 }
@@ -83,14 +94,7 @@ func removeAllCompletedTasks() {
 }
 
 func showMenu() {
-    print("Enter value:")
-    print("1. Add New Task")
-    print("2. View all tasks")
-    print("3. Mark a task as completed")
-    print("4. Remove a task")
-    print("5. Remove all completed tasks")
-    print("6. Quit/Exit")
-    
+    printMenu()
     let inputString = readLine()! //user input
     var input : Int?
     input = Int(inputString)     //convert user input to integer
@@ -102,7 +106,7 @@ func showMenu() {
     }
     case 2: do {
         print("View all tasks")
-        printTaskList()
+//        printTaskList()
     }
     case 3: do {
         print("Mark a task as completed")
