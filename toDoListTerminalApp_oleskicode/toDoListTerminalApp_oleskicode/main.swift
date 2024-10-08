@@ -4,7 +4,7 @@ var keepWorking = true
 
 struct toDoTask {
     var isComplete: Bool = false
-    var taskDescription: String
+    let taskDescription: String
     
     func printTask(){
         print("\(self.taskDescription) - isComplete:\(self.isComplete)")
@@ -60,13 +60,36 @@ func completeTask() {
     toDoList[input-1].isComplete = true
 }
 
+func removeTask() {
+    printTaskList()
+    print("Enter task number to remove:")
+    let IntInput = readLine()!
+    guard let input = Int(IntInput) else {
+        print("Invalid input. Please enter a valid number.")
+        return
+    }
+    guard input > 0, input <= toDoList.count else {
+        print("Invalid input. Please enter a valid number.")
+        return
+    }
+    toDoList.remove(at: input-1)
+}
+
+func removeAllCompletedTasks() {
+    print("Remove all completed tasks")
+    toDoList.removeAll(where: \.self.isComplete)
+    print("Completed tasks removed")
+
+}
+
 func showMenu() {
     print("Enter value:")
     print("1. Add New Task")
     print("2. View all tasks")
     print("3. Mark a task as completed")
     print("4. Remove a task")
-    print("5. Quit/Exit")
+    print("5. Remove all completed tasks")
+    print("6. Quit/Exit")
     
     let inputString = readLine()! //user input
     var input : Int?
@@ -87,8 +110,14 @@ func showMenu() {
     }
     case 4: do {
         print("Remove a task")
+        removeTask()
     }
-    case 5:  do {
+        
+    case 5: do {
+        removeAllCompletedTasks()
+    }
+        
+    case 6:  do {
         print("Quitting...")
         keepWorking = false
     }
